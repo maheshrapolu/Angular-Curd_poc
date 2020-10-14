@@ -18,6 +18,6 @@ export class HttpServiceService {
 return this.Http.delete('http://192.168.3.162:9090/delete/'+ alldata)
   }
   Data_Update(alldata){
-    return this.Http.put('http://192.168.3.162:9090/edit/'+ alldata.id, alldata)
+    return this.Http.put('http://192.168.3.162:9090/edit', alldata)
   }
 }

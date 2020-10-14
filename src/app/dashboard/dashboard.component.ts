@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   data:any;
   itemsPerPage = 60;
   currentPage = 0;
-  
+  p: number = 1;
   constructor(private Service:HttpServiceService,private fb:FormBuilder) { }
   form=this.fb.group({
   id:[],
@@ -54,7 +54,7 @@ edit(a){
  
 }
 update(){
- this.Service.Data_Update().subscribe(res=>{
+ this.Service.Data_Update(this.form.value).subscribe(res=>{
    this.GetAll()
   });
  this.form.reset();

@@ -35,7 +35,7 @@
         <th>Action</th>
         
     </tr>
-    <tr *ngFor="let a of data?.employeeList">
+    <tr *ngFor="let a of data?.employeeList | paginate: { itemsPerPage: 7, currentPage: p }">
         <td>{{a.id}}</td>
         <td>{{a.name}}</td>
         <td>{{a.salary}}</td>
@@ -49,4 +49,6 @@
                
         
     </tr>
+   
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
